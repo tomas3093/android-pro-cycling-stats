@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Semestralka</string>
+    <string name="btn_cyclists_value">Cyclists</string>
+    <string name="btn_teams_value">Teams</string>
+    <string name="txtView_header_title">PRO CYCLING STATS</string>
+    <string name="btn_news_value">RACING NEWS</string>
+    <string name="btn_exit_value">EXIT</string>
+</resources>

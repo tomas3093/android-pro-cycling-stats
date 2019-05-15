@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="25sp"
+        android:text="@string/txtView_header_title"
+        android:textAlignment="center"
+        android:textSize="24sp"
+        android:padding="15sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/btn_cyclists"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_cyclists_value"
+        android:padding="25sp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_teams"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/btn_teams_value"
+        android:padding="25sp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_news"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15sp"
+        android:text="@string/btn_news_value"
+        android:padding="25sp"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/btn_exit"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="onClickExitBtn"
+        android:padding="25sp"
+        android:text="@string/btn_exit_value"
+        android:textSize="18sp" />
+</LinearLayout>

@@ -1,0 +1,87 @@
+[
+  {
+    "id": 1,
+    "name": "Astana Pro Team",
+    "country": "Kazakhstan"
+  },
+  {
+    "id": 2,
+    "name": "Bahrain Merida",
+    "country": "Bahrain"
+  },
+  {
+    "id": 3,
+    "name": "Deceuninck - Quick Step",
+    "country": "Belgium"
+  },
+  {
+    "id": 4,
+    "name": "BORA - hansgrohe",
+    "country": "Germany"
+  },
+  {
+    "id": 5,
+    "name": "CCC Team",
+    "country": "Germany"
+  },
+  {
+    "id": 6,
+    "name": "EF Education First",
+    "country": "United States"
+  },
+  {
+    "id": 7,
+    "name": "Groupama - FDJ",
+    "country": "France"
+  },
+  {
+    "id": 8,
+    "name": "Lotto Soudal",
+    "country": "Belgium"
+  },
+  {
+    "id": 9,
+    "name": "Mitchelton-Scott",
+    "country": "Australia"
+  },
+  {
+    "id": 10,
+    "name": "Movistar Team",
+    "country": "Spain"
+  },
+  {
+    "id": 11,
+    "name": "Team Dimension Data",
+    "country": "South Africa"
+  },
+  {
+    "id": 12,
+    "name": "Team INEOS",
+    "country": "Great Britain"
+  },
+  {
+    "id": 13,
+    "name": "Team Jumbo-Visma",
+    "country": "Netherlands"
+  },
+  {
+    "id": 14,
+    "name": "Team Katusha - Alpecin",
+    "country": "Switzerland"
+  },
+  {
+    "id": 15,
+    "name": "Team Sunweb",
+    "country": "Germany"
+  },
+  {
+    "id": 16,
+    "name": "Trek - Segafredo",
+    "country": "United States"
+  },
+  {
+    "id": 17,
+    "name": "UAE-Team Emirates",
+    "country": "United Arab Emirates"
+  }
+]
