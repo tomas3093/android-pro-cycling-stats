@@ -6,11 +6,6 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
-import com.example.semestralka.model.DataManager;
-import com.example.semestralka.model.Team;
-
-import java.util.List;
-
 public class MainActivity extends AppCompatActivity {
 
     @Override

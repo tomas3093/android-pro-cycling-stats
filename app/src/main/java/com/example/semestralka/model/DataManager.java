@@ -55,18 +55,93 @@ public class DataManager {
 
         ContentValues values = new ContentValues();
         values.put("id", 1);
+        values.put("name", "AG2R La Mondiale");
+        values.put("country", "France");
+        db.insert("teams", null, values);
+
+        values.put("id", 2);
         values.put("name", "Astana Pro Team");
         values.put("country", "Kazakhstan");
         db.insert("teams", null, values);
 
-        values.put("id", 2);
+        values.put("id", 3);
         values.put("name", "Bahrain Merida");
         values.put("country", "Bahrain");
         db.insert("teams", null, values);
 
-        values.put("id", 3);
+        values.put("id", 4);
+        values.put("name", "BORA - hansgrohe");
+        values.put("country", "Germany");
+        db.insert("teams", null, values);
+
+        values.put("id", 5);
+        values.put("name", "CCC Team");
+        values.put("country", "Poland");
+        db.insert("teams", null, values);
+
+        values.put("id", 6);
         values.put("name", "Deceuninck - Quick Step");
         values.put("country", "Belgium");
+        db.insert("teams", null, values);
+
+        values.put("id", 7);
+        values.put("name", "EF Education First");
+        values.put("country", "United States");
+        db.insert("teams", null, values);
+
+        values.put("id", 8);
+        values.put("name", "Groupama - FDJ");
+        values.put("country", "France");
+        db.insert("teams", null, values);
+
+        values.put("id", 9);
+        values.put("name", "Lotto Soudal");
+        values.put("country", "Belgium");
+        db.insert("teams", null, values);
+
+        values.put("id", 10);
+        values.put("name", "Mitchelton-Scott");
+        values.put("country", "Australia");
+        db.insert("teams", null, values);
+
+        values.put("id", 11);
+        values.put("name", "Movistar Team");
+        values.put("country", "Spain");
+        db.insert("teams", null, values);
+
+        values.put("id", 12);
+        values.put("name", "Team Dimension Data");
+        values.put("country", "South Africa");
+        db.insert("teams", null, values);
+
+        values.put("id", 13);
+        values.put("name", "Team INEOS");
+        values.put("country", "Great Britain");
+        db.insert("teams", null, values);
+
+        values.put("id", 14);
+        values.put("name", "Team Jumbo-Visma");
+        values.put("country", "Netherlands");
+        db.insert("teams", null, values);
+
+        values.put("id", 15);
+        values.put("name", "Team Katusha - Alpecin");
+        values.put("country", "Switzerland");
+        db.insert("teams", null, values);
+
+        values.put("id", 16);
+        values.put("name", "Team Sunweb");
+        values.put("country", "Germany");
+        db.insert("teams", null, values);
+
+        values.put("id", 17);
+        values.put("name", "Trek - Segafredo");
+        values.put("country", "United States");
+        db.insert("teams", null, values);
+
+        values.put("id", 18);
+        values.put("name", "UAE-Team Emirates");
+        values.put("country", "United Arab Emirates");
         db.insert("teams", null, values);
     }
 

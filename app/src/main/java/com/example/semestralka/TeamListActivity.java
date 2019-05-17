@@ -1,5 +1,6 @@
 package com.example.semestralka;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,12 @@ import com.example.semestralka.model.Team;
 
 import java.util.List;
 
+import static android.provider.AlarmClock.EXTRA_MESSAGE;
+
+
+/**
+ * Zobrazenie zoznamu vsetkych timov
+ */
 public class TeamListActivity extends AppCompatActivity implements TeamsViewAdapter.ItemClickListener {
 
     TeamsViewAdapter adapter;
@@ -41,6 +48,15 @@ public class TeamListActivity extends AppCompatActivity implements TeamsViewAdap
 
     @Override
     public void onItemClick(View view, int position) {
-        Toast.makeText(this, "You clicked " + adapter.getItem(position) + " on row number " + position, Toast.LENGTH_SHORT).show();
+        //Toast.makeText(this, "You clicked " + adapter.getItem(position).getName(), Toast.LENGTH_SHORT).show();
+
+        // Zobrazenie detailu zvoleneho timu
+        Intent intent = new Intent(this, TeamDetailActivity.class);
+
+        // Prenesenie dat do druhej aktivity
+        Team selectedTeam = adapter.getItem(position);
+        intent.putExtra(EXTRA_MESSAGE, selectedTeam);
+
+        startActivity(intent);
     }
 }
