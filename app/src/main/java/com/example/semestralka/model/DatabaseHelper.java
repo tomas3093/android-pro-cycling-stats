@@ -17,12 +17,27 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        db.execSQL("CREATE TABLE IF NOT EXISTS teams (id INTEGER PRIMARY KEY AUTOINCREMENT, name TEXT, country TEXT);");
+        // CREATE TABLES
+        db.execSQL("CREATE TABLE IF NOT EXISTS teams (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "name TEXT, " +
+                "country TEXT);");
+
+        db.execSQL("CREATE TABLE IF NOT EXISTS cyclists (" +
+                "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+                "name TEXT, " +
+                "surname TEXT, " +
+                "birthDate TEXT, " +
+                "teamId INTEGER, " +
+                "nationality TEXT, " +
+                "weight INTEGER, " +
+                "height INTEGER);");
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         db.execSQL("DROP TABLE IF EXISTS teams;");
+        db.execSQL("DROP TABLE IF EXISTS cyclists;");
         onCreate(db);
     }
 

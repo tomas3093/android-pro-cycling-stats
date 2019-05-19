@@ -28,15 +28,9 @@ public class TeamListActivity extends AppCompatActivity implements TeamsViewAdap
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_list);
 
-        // Vytvorenie manazera dat
+        // Ziskanie dat
         DataManager dm = DataManager.getInstance(this);
-
-        // Nacitanie example dat
-        dm.loadExampleData();
-
         List<Team> teams = dm.getAllTeams();
-        dm.close(); // Zatvorenie spojenia
-
 
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.rvTeams);

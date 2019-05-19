@@ -5,4 +5,5 @@
     <string name="txtView_header_title">PRO CYCLING STATS</string>
     <string name="btn_news_value">RACING NEWS</string>
     <string name="btn_exit_value">EXIT</string>
+    <string name="riders_label">Members:</string>
 </resources>

@@ -6,6 +6,12 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Toast;
 
+import com.example.semestralka.model.DataManager;
+
+
+/**
+ * Hlavna aktivita volana pri spusteni aplikacie
+ */
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -13,9 +19,22 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        // Vytvorenie manazera dat
+        DataManager dm = DataManager.getInstance(this);
+
+        // Nacitanie example dat
+        dm.loadExampleData();
 
         //Team t = l.get(1);
         //Toast.makeText(this, "First team " + t.getName(), Toast.LENGTH_LONG).show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+
+        // Zatvorenie spojenia
+        DataManager.getInstance(this).close();
     }
 
 
@@ -25,7 +44,8 @@ public class MainActivity extends AppCompatActivity {
      */
     public void onClickCyclistsBtn(View v)
     {
-        // TODO
+        Intent intent = new Intent(this, CyclistListActivity.class);
+        startActivity(intent);
     }
 
 
