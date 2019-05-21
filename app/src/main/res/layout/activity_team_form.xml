@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="7dp"
+    tools:context=".TeamFormActivity">
+
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/team_add_label"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="25dp"/>
+
+    <TextView
+        android:id="@+id/name_field_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/team_name_hint_label"
+        android:textSize="18sp"
+        android:textStyle="italic"/>
+
+    <EditText
+        android:id="@+id/etTeamName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:layout_marginBottom="15dp"/>
+
+    <TextView
+        android:id="@+id/country_field_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/team_country_hint_label"
+        android:textSize="18sp"
+        android:textStyle="italic"/>
+
+    <EditText
+        android:id="@+id/etTeamCountry"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:maxLength="30"
+        android:layout_marginBottom="45dp"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#0086FF"
+        android:onClick="onClickSaveBtn"
+        android:text="@string/save_button_value"
+        android:textColor="@android:color/white"
+        android:textSize="19sp" />
+</LinearLayout>

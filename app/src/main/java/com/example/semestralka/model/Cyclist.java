@@ -9,34 +9,35 @@ import android.os.Parcelable;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.Calendar;
 
 public class Cyclist implements Parcelable {
 
     private int id;
     private String name;
     private String surname;
-    private String birthDate;   // ISO string
+    private int birthYear;   // ISO string
     private Team team;
     private String nationality;
     private int weight;
     private int height;
 
-    public Cyclist(int id, String name, String surname, String birthDate, Team team, String nationality, int weight, int height) {
+    public Cyclist(int id, String name, String surname, int birthYear, Team team, String nationality, int weight, int height) {
         this.id = id;
         this.name = name;
         this.surname = surname;
-        this.birthDate = birthDate;
+        this.birthYear = birthYear;
         this.team = team;
         this.nationality = nationality;
         this.weight = weight;
         this.height = height;
     }
 
-    Cyclist(Parcel in) {
+    public Cyclist(Parcel in) {
         id = in.readInt();
         name = in.readString();
         surname = in.readString();
-        birthDate = in.readString();
+        birthYear = in.readInt();
         team = in.readParcelable(Team.class.getClassLoader());
         nationality = in.readString();
         weight = in.readInt();
@@ -65,7 +66,7 @@ public class Cyclist implements Parcelable {
         dest.writeInt(id);
         dest.writeString(name);
         dest.writeString(surname);
-        dest.writeString(birthDate);
+        dest.writeInt(birthYear);
         dest.writeParcelable(team, flags);
         dest.writeString(nationality);
         dest.writeInt(weight);
@@ -88,11 +89,15 @@ public class Cyclist implements Parcelable {
         return surname;
     }
 
-    public String getBirthDate() {
-        return birthDate;
+    public int getBirthYear() {
+        return birthYear;
     }
 
-    public int getAge() { return -1; }
+    public String getAge() {
+        int currentYear = Calendar.getInstance().get(Calendar.YEAR);
+
+        return String.valueOf(currentYear - birthYear);
+    }
 
     public Team getTeam() {
         return team;
@@ -121,6 +126,15 @@ public class Cyclist implements Parcelable {
 
 
     /**
+     * Vrati cestu k default nahladovemu obrazku
+     * @return
+     */
+    private String getDefaultImageUrl() {
+        return "cyclists/default.jpg";
+    }
+
+
+    /**
      * Vrati nahladovy obrazok daneho cyklistu
      * @param context
      * @return
@@ -135,7 +149,15 @@ public class Cyclist implements Parcelable {
             inputStream = assetManager.open(getImageUrl());
             bitmap = BitmapFactory.decodeStream(inputStream);
         } catch (IOException e) {
-            e.printStackTrace();
+
+            // Ak sa nenasiel obrazok cyklistu, hlada sa default
+            try {
+                inputStream = assetManager.open(getDefaultImageUrl());
+                bitmap = BitmapFactory.decodeStream(inputStream);
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            }
+
         }
 
         return bitmap;

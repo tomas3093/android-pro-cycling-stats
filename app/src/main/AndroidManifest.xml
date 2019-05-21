@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".CyclistDetailActivity"></activity>
+        <activity android:name=".CyclistFormActivity"></activity>
+        <activity android:name=".TeamFormActivity" />
+        <activity android:name=".CyclistDetailActivity" />
         <activity android:name=".CyclistsViewAdapter" />
         <activity android:name=".TeamDetailActivity" />
         <activity android:name=".CyclistListActivity" />

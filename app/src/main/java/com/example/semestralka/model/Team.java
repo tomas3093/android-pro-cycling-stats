@@ -20,13 +20,13 @@ public class Team implements Parcelable {
     private String name;
     private String country;
 
-    Team(int id, String name, String country) {
+    public Team(int id, String name, String country) {
         this.id = id;
         this.name = name;
         this.country = country;
     }
 
-    Team(Parcel in) {
+    public Team(Parcel in) {
         id = in.readInt();
         name = in.readString();
         country = in.readString();
@@ -56,6 +56,9 @@ public class Team implements Parcelable {
         return country;
     }
 
+    public void setId(int id) {
+        this.id = id;
+    }
 
     /**
      * Vrati cestu k nahladovemu obrazku daneho timu
@@ -67,7 +70,16 @@ public class Team implements Parcelable {
 
 
     /**
-     * Vrati nahladovy obrazok daneho tymu
+     * Vrati cestu k default nahladovemu obrazku
+     * @return
+     */
+    private String getDefaultImageUrl() {
+        return "teams/default.png";
+    }
+
+
+    /**
+     * Vrati nahladovy obrazok daneho timu
      * @param context
      * @return
      */
@@ -81,7 +93,15 @@ public class Team implements Parcelable {
             inputStream = assetManager.open(getImageUrl());
             bitmap = BitmapFactory.decodeStream(inputStream);
         } catch (IOException e) {
-            e.printStackTrace();
+
+            // Ak sa nenasiel obrazok timu, hlada sa default
+            try {
+                inputStream = assetManager.open(getDefaultImageUrl());
+                bitmap = BitmapFactory.decodeStream(inputStream);
+            } catch (IOException e2) {
+                e2.printStackTrace();
+            }
+
         }
 
         return bitmap;

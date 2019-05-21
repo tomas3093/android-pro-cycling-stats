@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Toast;
 
 import com.example.semestralka.model.DataManager;
 
@@ -22,11 +21,9 @@ public class MainActivity extends AppCompatActivity {
         // Vytvorenie manazera dat
         DataManager dm = DataManager.getInstance(this);
 
-        // Nacitanie example dat
-        dm.loadExampleData();
-
-        //Team t = l.get(1);
-        //Toast.makeText(this, "First team " + t.getName(), Toast.LENGTH_LONG).show();
+        // Nacitanie example dat ak je DB prazdna
+        if (dm.isEmpty())
+            dm.loadExampleData();
     }
 
     @Override

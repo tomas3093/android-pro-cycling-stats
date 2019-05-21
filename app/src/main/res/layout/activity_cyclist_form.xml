@@ -1,0 +1,161 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="7dp"
+    tools:context=".CyclistFormActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/cyclist_add_label"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="25dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/name_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_name_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:id="@+id/etCyclistName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/surname_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cyclist_surname_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:id="@+id/etCyclistSurname"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/birthdate_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cyclist_birthdate_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:id="@+id/etCyclistBirthYear"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="date"
+                android:layout_marginBottom="45dp"/>
+
+            <TextView
+                android:id="@+id/team_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/team_picker_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/tvTeamPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:maxLength="30"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/nationality_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cyclist_nationality_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:id="@+id/etCyclistNationality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:maxLength="30"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/weight_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cyclist_weight_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:id="@+id/etCyclistWeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="30"
+                android:hint="@string/kilograms_unit_label"
+                android:layout_marginBottom="15dp"/>
+
+            <TextView
+                android:id="@+id/height_field_label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/cyclist_height_hint_label"
+                android:textSize="18sp"
+                android:textStyle="italic"/>
+
+            <EditText
+                android:id="@+id/etCyclistHeight"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ems="10"
+                android:inputType="number"
+                android:maxLength="30"
+                android:hint="@string/centimeters_unit_label"
+                android:layout_marginBottom="15dp"/>
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0086FF"
+                android:onClick="onClickSaveBtn"
+                android:text="@string/save_button_value"
+                android:textColor="@android:color/white"
+                android:textSize="19sp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</LinearLayout>

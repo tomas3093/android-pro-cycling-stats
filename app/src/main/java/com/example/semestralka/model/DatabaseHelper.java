@@ -27,7 +27,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "name TEXT, " +
                 "surname TEXT, " +
-                "birthDate TEXT, " +
+                "birthYear INTEGER, " +
                 "teamId INTEGER, " +
                 "nationality TEXT, " +
                 "weight INTEGER, " +

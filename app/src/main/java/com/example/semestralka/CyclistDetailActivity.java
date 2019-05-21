@@ -6,7 +6,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.semestralka.model.Cyclist;
-import com.example.semestralka.model.Team;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
@@ -38,7 +37,7 @@ public class CyclistDetailActivity extends AppCompatActivity {
                     tvCyclistFullName.setText(cyclist.getFullName());
                     tvTeamName.setText("Current team: " + cyclist.getTeam().getName());
                     tvNationality.setText("Nationality: " + cyclist.getNationality());
-                    tvBirthDate.setText("Date of birth: " + cyclist.getBirthDate());
+                    tvBirthDate.setText("Year of birth: " + cyclist.getBirthYear());
                     tvAge.setText("Age: " + cyclist.getAge());
                     tvWeight.setText("Weight: " + cyclist.getWeight() + " kg");
                     tvHeight.setText("Height: " + cyclist.getHeight() + " cm");

@@ -3,13 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
+    android:padding="7dp"
     tools:context=".TeamListActivity">
 
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/rvTeams"
+    <TextView
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:text="@string/label_teams"
+        android:textSize="25sp"
+        android:paddingBottom="10dp"/>
+
+    <ScrollView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rvTeams"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"/>
+
+            <com.getbase.floatingactionbutton.AddFloatingActionButton
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/rvTeams"
+                android:layout_alignParentEnd="true"
+                android:onClick="onClickAddBtn" />
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>

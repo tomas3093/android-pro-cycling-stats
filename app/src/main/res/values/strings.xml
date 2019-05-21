@@ -1,9 +1,22 @@
 <resources>
-    <string name="app_name">Semestralka</string>
-    <string name="btn_cyclists_value">Cyclists</string>
-    <string name="btn_teams_value">Teams</string>
+    <string name="app_name">ProCycling Stats</string>
+    <string name="label_cyclists">Cyclists</string>
+    <string name="label_teams">Teams</string>
     <string name="txtView_header_title">PRO CYCLING STATS</string>
     <string name="btn_news_value">RACING NEWS</string>
     <string name="btn_exit_value">EXIT</string>
     <string name="riders_label">Members:</string>
+    <string name="team_add_label">Add new team</string>
+    <string name="team_name_hint_label">Name:</string>
+    <string name="team_country_hint_label">Country:</string>
+    <string name="save_button_value">Save</string>
+    <string name="cyclist_add_label">Add new cyclist</string>
+    <string name="cyclist_surname_hint_label">Surname:</string>
+    <string name="cyclist_birthdate_hint_label">Birth year:</string>
+    <string name="team_picker_hint_label">Team:</string>
+    <string name="cyclist_nationality_hint_label">Nationality:</string>
+    <string name="cyclist_weight_hint_label">Weight:</string>
+    <string name="kilograms_unit_label">kg</string>
+    <string name="cyclist_height_hint_label">Height:</string>
+    <string name="centimeters_unit_label">cm</string>
 </resources>
