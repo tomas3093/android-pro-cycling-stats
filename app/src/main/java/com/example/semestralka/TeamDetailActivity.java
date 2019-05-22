@@ -31,47 +31,68 @@ public class TeamDetailActivity extends AppCompatActivity implements CyclistsVie
 
     private static final int REQUEST_CODE_MEMBER_DELETE = 1;
 
+    private static final String STATE_ID_DATA = "stateIdData";
+
     private CyclistsViewAdapter adapter;
-    private int teamId;
+    private Team data;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_detail);
 
-        TextView txtViewTeamName = findViewById(R.id.tvTeamName);
-        TextView txtViewTeamCountry = findViewById(R.id.tvTeamCountry);
-        ImageView imgViewTeamThumbnail = findViewById(R.id.ivTeamThumbnail);
-
-        // Ziskanie pozadovaneho timu
+        // Vytvaranie novej instancie
         if (savedInstanceState == null) {
             Bundle extras = getIntent().getExtras();
 
             if (extras != null) {
-
+                // Ziskanie pozadovaneho timu
                 Team team = extras.getParcelable(EXTRA_MESSAGE);
                 if (team != null) {
-                    teamId = team.getId();
-                    txtViewTeamName.setText(team.getName());
-                    txtViewTeamCountry.setText(team.getCountry());
-                    imgViewTeamThumbnail.setImageBitmap(team.getBitmapFromAsset(this));
+                    data = team;
 
-                    // Nacitanie cyklistov - clenov timu
-                    loadTeamsToRecyclerView();
+                    // Nacitanie a vykreslenie dat
+                    setAndRenderView();
                 }
             }
+        } else {
+            // Obnova zrusenej instancie
+            data = savedInstanceState.getParcelable(STATE_ID_DATA);
+
+            // Nacitanie a vykreslenie dat
+            setAndRenderView();
         }
     }
 
 
     /**
-     * Nacita nanovo data do zoznamu
+     * Volane pri zmene konfiguracie; ulozenie zobrazenych dat
+     * @param outState
      */
-    private void loadTeamsToRecyclerView() {
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        // Ulozenie aktualne zobrazeneho timu
+        outState.putParcelable(STATE_ID_DATA, data);
+
+        // Always call the superclass so it can save the view hierarchy state
+        super.onSaveInstanceState(outState);
+    }
+
+    /**
+     * Nastavi data do jednotlivych view a nacita cyklistov z daneho timu
+     */
+    private void setAndRenderView() {
+        TextView txtViewTeamName = findViewById(R.id.tvTeamName);
+        TextView txtViewTeamCountry = findViewById(R.id.tvTeamCountry);
+        ImageView imgViewTeamThumbnail = findViewById(R.id.ivTeamThumbnail);
+
+        txtViewTeamName.setText(data.getName());
+        txtViewTeamCountry.setText(data.getCountry());
+        imgViewTeamThumbnail.setImageBitmap(data.getBitmapFromAsset(this));
 
         // Ziskanie cyklistov z daneho timu
         DataManager dm = DataManager.getInstance(this);
-        List<Cyclist> cyclists = dm.getAllCyclists(teamId);
+        List<Cyclist> cyclists = dm.getAllCyclists(data.getId());
 
         // set up the RecyclerView
         RecyclerView recyclerView = findViewById(R.id.rvCyclists);
@@ -111,7 +132,7 @@ public class TeamDetailActivity extends AppCompatActivity implements CyclistsVie
                 // User clicked OK
 
                 // Delete team
-                boolean wasDeleted = DataManager.getInstance(context).deleteTeam(teamId);
+                boolean wasDeleted = DataManager.getInstance(context).deleteTeam(data.getId());
                 if (wasDeleted) {
                     // Sprava pre volajucu aktivitu ze sa zmazanie podarilo
                     Intent resultIntent = new Intent();
@@ -151,7 +172,7 @@ public class TeamDetailActivity extends AppCompatActivity implements CyclistsVie
             case REQUEST_CODE_MEMBER_DELETE:
                 if (resultCode == Activity.RESULT_OK) {     // Vymazanie sa podarilo
                     // Aktualizovanie zoznamu timov
-                    loadTeamsToRecyclerView();
+                    setAndRenderView();
                     Toast.makeText(this, "Team member deleted!", Toast.LENGTH_LONG).show();
                 } else if (resultCode == Activity.RESULT_CANCELED) {    // Vymazanie zlyhalo
                     // Do nothing

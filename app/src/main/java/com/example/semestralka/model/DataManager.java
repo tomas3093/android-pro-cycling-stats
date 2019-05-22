@@ -542,5 +542,7 @@ public class DataManager {
      */
     public void close() {
         db.close();
+        db = null;
+        instance = null;
     }
 }

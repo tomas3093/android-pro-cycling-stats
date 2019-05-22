@@ -16,7 +16,7 @@ public class Cyclist implements Parcelable {
     private int id;
     private String name;
     private String surname;
-    private int birthYear;   // ISO string
+    private int birthYear;
     private Team team;
     private String nationality;
     private int weight;
