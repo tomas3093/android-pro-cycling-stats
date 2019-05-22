@@ -25,6 +25,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class CyclistListActivity extends AppCompatActivity implements CyclistsViewAdapter.ItemClickListener {
 
     private static final int REQUEST_CODE_CYCLIST_ADD = 1;
+    private static final int REQUEST_CODE_CYCLIST_DELETE = 2;
 
     CyclistsViewAdapter adapter;
 
@@ -65,7 +66,8 @@ public class CyclistListActivity extends AppCompatActivity implements CyclistsVi
         Cyclist selectedCyclist = adapter.getItem(position);
         intent.putExtra(EXTRA_MESSAGE, selectedCyclist);
 
-        startActivity(intent);
+        // Spustenie aktivity s cakanim na vysledok ci user vymaze cyklistu
+        startActivityForResult(intent, REQUEST_CODE_CYCLIST_DELETE);
     }
 
 
@@ -93,6 +95,7 @@ public class CyclistListActivity extends AppCompatActivity implements CyclistsVi
         super.onActivityResult(requestCode, resultCode, data);
 
         switch(requestCode) {
+            // Poziadavka na pridanie cyklistu
             case REQUEST_CODE_CYCLIST_ADD:
                 if (resultCode == Activity.RESULT_OK) {     // Pridanie sa podarilo
                     // Aktualizovanie zoznamu timov
@@ -101,6 +104,18 @@ public class CyclistListActivity extends AppCompatActivity implements CyclistsVi
                 } else if (resultCode == Activity.RESULT_CANCELED) {    // Pridanie zlyhalo
                     // Do nothing
                     Toast.makeText(this, "Action canceled!", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            // Poziadavka na vymazanie cyklistu
+            case REQUEST_CODE_CYCLIST_DELETE:
+                if (resultCode == Activity.RESULT_OK) {     // Vymazanie sa podarilo
+                    // Aktualizovanie zoznamu cyklistov
+                    loadCyclistsToRecyclerView();
+                    Toast.makeText(this, "Cyclist deleted!", Toast.LENGTH_LONG).show();
+                } else if (resultCode == Activity.RESULT_CANCELED) {    // Vymazanie zlyhalo
+                    // Do nothing
+                    //Toast.makeText(this, "Action canceled!", Toast.LENGTH_LONG).show();
                 }
                 break;
 

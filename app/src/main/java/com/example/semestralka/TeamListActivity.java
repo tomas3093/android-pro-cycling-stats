@@ -24,6 +24,7 @@ import static android.provider.AlarmClock.EXTRA_MESSAGE;
 public class TeamListActivity extends AppCompatActivity implements TeamsViewAdapter.ItemClickListener {
 
     private static final int REQUEST_CODE_TEAM_ADD = 1;
+    private static final int REQUEST_CODE_TEAM_DELETE = 2;
 
     TeamsViewAdapter adapter;
 
@@ -66,7 +67,7 @@ public class TeamListActivity extends AppCompatActivity implements TeamsViewAdap
         Team selectedTeam = adapter.getItem(position);
         intent.putExtra(EXTRA_MESSAGE, selectedTeam);
 
-        startActivity(intent);
+        startActivityForResult(intent, REQUEST_CODE_TEAM_DELETE);
     }
 
 
@@ -94,6 +95,7 @@ public class TeamListActivity extends AppCompatActivity implements TeamsViewAdap
         super.onActivityResult(requestCode, resultCode, data);
 
         switch(requestCode) {
+            // Poziadavka na pridanie timu
             case REQUEST_CODE_TEAM_ADD:
                 if (resultCode == Activity.RESULT_OK) {     // Pridanie sa podarilo
                     // Aktualizovanie zoznamu timov
@@ -102,6 +104,18 @@ public class TeamListActivity extends AppCompatActivity implements TeamsViewAdap
                 } else if (resultCode == Activity.RESULT_CANCELED) {    // Pridanie zlyhalo
                     // Do nothing
                     Toast.makeText(this, "Action canceled!", Toast.LENGTH_LONG).show();
+                }
+                break;
+
+            // Poziadavka na vymazanie timu
+            case REQUEST_CODE_TEAM_DELETE:
+                if (resultCode == Activity.RESULT_OK) {     // Vymazanie sa podarilo
+                    // Aktualizovanie zoznamu timov
+                    loadTeamsToRecyclerView();
+                    Toast.makeText(this, "Team deleted!", Toast.LENGTH_LONG).show();
+                } else if (resultCode == Activity.RESULT_CANCELED) {    // Vymazanie zlyhalo
+                    // Do nothing
+                    //Toast.makeText(this, "Action canceled!", Toast.LENGTH_LONG).show();
                 }
                 break;
 

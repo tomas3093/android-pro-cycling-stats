@@ -53,7 +53,17 @@
             <android.support.v7.widget.RecyclerView
                 android:id="@+id/rvCyclists"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content" />
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="50dp" />
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/delete_btn_label"
+                android:padding="7dp"
+                android:textSize="15sp"
+                android:onClick="onClickDeleteBtn"
+                android:background="#E94636"/>
 
         </LinearLayout>
 
