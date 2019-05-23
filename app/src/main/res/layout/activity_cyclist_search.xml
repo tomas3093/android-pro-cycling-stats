@@ -1,9 +1,259 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="7dp"
     tools:context=".CyclistSearchActivity">
 
-</android.support.constraint.ConstraintLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:textSize="25sp"
+                android:text="@string/cyclist_search_title"
+                android:layout_marginBottom="25dp"/>
+
+
+            <!-- NAME -->
+            <TextView
+            android:id="@+id/name_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20sp"
+            android:textStyle="italic"
+            android:text="@string/search_name_hint"
+            android:layout_below="@+id/title"/>
+
+            <EditText
+                android:id="@+id/name_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_below="@+id/title"
+                android:layout_toEndOf="@+id/name_label"
+                android:layout_marginBottom="20dp"/>
+
+
+            <!-- SURNAME -->
+            <TextView
+                android:id="@+id/surname_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/search_surname_hint"
+                android:layout_below="@+id/name_field"/>
+
+            <EditText
+                android:id="@+id/surname_field"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:layout_below="@+id/name_field"
+                android:layout_toEndOf="@+id/surname_label"
+                android:layout_marginBottom="20dp"/>
+
+
+            <!-- AGE -->
+            <TextView
+                android:id="@+id/age_from_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/age_from_search_hint"
+                android:layout_below="@+id/surname_field"/>
+
+            <EditText
+                android:id="@+id/age_from_field"
+                android:layout_width="wrap_content"
+                android:minWidth="100sp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:layout_below="@+id/surname_field"
+                android:layout_toEndOf="@+id/age_from_label"/>
+
+            <TextView
+                android:id="@+id/age_to_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/to_search_hint"
+                android:layout_below="@+id/surname_field"
+                android:layout_toEndOf="@id/age_from_field"/>
+
+            <EditText
+                android:id="@+id/age_to_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100sp"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:layout_below="@+id/surname_field"
+                android:layout_toEndOf="@+id/age_to_label"
+                android:layout_marginBottom="20dp"/>
+
+
+            <!-- TEAM -->
+            <TextView
+                android:id="@+id/team_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/team_picker_hint_label"
+                android:layout_below="@+id/age_to_field"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/tvTeamPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:ems="10"
+                android:maxLength="35"
+                android:layout_below="@id/age_to_field"
+                android:layout_toEndOf="@id/team_label"
+                android:layout_marginBottom="20dp"/>
+
+
+            <!-- NATIONALITY -->
+            <TextView
+                android:id="@+id/nationality_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/nationality_search_hint"
+                android:layout_below="@+id/tvTeamPicker"/>
+
+            <AutoCompleteTextView
+                android:id="@+id/tvNationalityPicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:ems="10"
+                android:maxLength="35"
+                android:layout_below="@id/tvTeamPicker"
+                android:layout_toEndOf="@id/nationality_label"
+                android:layout_marginBottom="20dp"/>
+
+
+            <!-- WEIGHT -->
+            <TextView
+                android:id="@+id/weight_from_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/weight_from_search_hint"
+                android:layout_below="@+id/tvNationalityPicker"/>
+
+            <EditText
+                android:id="@+id/weight_from_field"
+                android:layout_width="wrap_content"
+                android:minWidth="100sp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="@string/kilograms_unit_label"
+                android:layout_below="@+id/tvNationalityPicker"
+                android:layout_toEndOf="@+id/weight_from_label"/>
+
+            <TextView
+                android:id="@+id/weight_to_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/to_search_hint"
+                android:layout_below="@+id/tvNationalityPicker"
+                android:layout_toEndOf="@id/weight_from_field"/>
+
+            <EditText
+                android:id="@+id/weight_to_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100sp"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="@string/kilograms_unit_label"
+                android:layout_below="@+id/tvNationalityPicker"
+                android:layout_toEndOf="@+id/weight_to_label"
+                android:layout_marginBottom="20dp"/>
+
+
+            <!-- HEIGHT -->
+            <TextView
+                android:id="@+id/height_from_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/height_from_search_hint"
+                android:layout_below="@+id/weight_to_field"/>
+
+            <EditText
+                android:id="@+id/height_from_field"
+                android:layout_width="wrap_content"
+                android:minWidth="100sp"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="@string/centimeters_unit_label"
+                android:layout_below="@+id/weight_to_field"
+                android:layout_toEndOf="@+id/height_from_label"/>
+
+            <TextView
+                android:id="@+id/height_to_label"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="20sp"
+                android:textStyle="italic"
+                android:text="@string/to_search_hint"
+                android:layout_below="@+id/weight_to_field"
+                android:layout_toEndOf="@id/height_from_field"/>
+
+            <EditText
+                android:id="@+id/height_to_field"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="100sp"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:hint="@string/centimeters_unit_label"
+                android:layout_below="@+id/weight_to_field"
+                android:layout_toEndOf="@+id/height_to_label"
+                android:layout_marginBottom="45dp"/>
+
+
+            <!-- BUTTON -->
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#0086FF"
+                android:onClick="onClickSearchBtn"
+                android:text="@string/btn_search_value"
+                android:textColor="@android:color/white"
+                android:textSize="19sp"
+                android:layout_below="@+id/height_to_field"/>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+</RelativeLayout>

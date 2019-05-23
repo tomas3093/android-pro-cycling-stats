@@ -45,13 +45,13 @@
                 android:textSize="18sp" />
 
             <Button
-                android:id="@+id/btn_news"
+                android:id="@+id/btn_search"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="15sp"
-                android:onClick="onClickNewsBtn"
+                android:onClick="onClickSearchBtn"
                 android:padding="25sp"
-                android:text="@string/btn_news_value"
+                android:text="@string/btn_search_value"
                 android:textSize="18sp" />
 
             <Button

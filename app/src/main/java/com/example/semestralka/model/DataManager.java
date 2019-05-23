@@ -157,6 +157,26 @@ public class DataManager {
 
 
     /**
+     * Vrati podmnozinu vsetkych existujucich cyklistov s aplikovanim vyhladavacieho kriteria
+     * @return
+     */
+    public List<Cyclist> getFilteredCyclists(SearchCriterion criterion) {
+
+        // Ziskanie vsetkych cyklistov
+        List<Cyclist> list = getAllCyclists();
+
+        // Vyfiltrovanie iba tych ktori splnaju kriterium
+        ArrayList<Cyclist> filteredList = new ArrayList<>();
+        for (Cyclist c : list) {
+            if (criterion.isCyclistValid(c))
+                filteredList.add(c);
+        }
+
+        return filteredList;
+    }
+
+
+    /**
      * Vrati vsetky timy z DB
      * @return
      */
@@ -190,6 +210,29 @@ public class DataManager {
         c.moveToFirst();
         while (!c.isAfterLast()) {
             String name = c.getString(c.getColumnIndex("name"));
+            list.add(name);
+            c.moveToNext();
+        }
+        c.close();
+
+        String[] arrToReturn = new String[list.size()];
+        arrToReturn = list.toArray(arrToReturn);
+
+        return arrToReturn;
+    }
+
+
+    /**
+     * Vrati nazvy vsetkych narodnosti z DB
+     * @return
+     */
+    public String[] getAllNationalities() {
+        ArrayList<String> list = new ArrayList<>();
+        Cursor c = db.rawQuery("SELECT DISTINCT nationality FROM cyclists", null);
+
+        c.moveToFirst();
+        while (!c.isAfterLast()) {
+            String name = c.getString(c.getColumnIndex("nationality"));
             list.add(name);
             c.moveToNext();
         }

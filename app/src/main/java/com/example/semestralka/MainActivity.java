@@ -1,6 +1,7 @@
 package com.example.semestralka;
 
 import android.content.Intent;
+import android.os.Parcelable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -12,6 +13,8 @@ import com.example.semestralka.model.DataManager;
  * Hlavna aktivita volana pri spusteni aplikacie
  */
 public class MainActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE_DATA = "intent_extra_message_data";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +45,10 @@ public class MainActivity extends AppCompatActivity {
     public void onClickCyclistsBtn(View v)
     {
         Intent intent = new Intent(this, CyclistListActivity.class);
+
+        // Nastavenie filtrovacieho kriteria
+        intent.putExtra(EXTRA_MESSAGE_DATA, (Parcelable) null);
+
         startActivity(intent);
     }
 
@@ -57,19 +64,20 @@ public class MainActivity extends AppCompatActivity {
         // Prenesenie dat do druhej aktivity
         //EditText editText = (EditText) findViewById(R.id.editText);
         //String message = editText.getText().toString();
-        //intent.putExtra(EXTRA_MESSAGE, message);
+        //intent.putExtra(EXTRA_MESSAGE_DATA, message);
 
         startActivity(intent);
     }
 
 
     /**
-     * Zobrazenie zoznamu noviniek
+     * Zobrazenie aktivity s vyhladavacim filtrom cyklistov
      * @param v
      */
-    public void onClickNewsBtn(View v)
+    public void onClickSearchBtn(View v)
     {
-        // TODO
+        Intent intent = new Intent(this, CyclistSearchActivity.class);
+        startActivity(intent);
     }
 
 

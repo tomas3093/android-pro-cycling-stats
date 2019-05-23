@@ -33,7 +33,7 @@ public class CyclistFormActivity extends AppCompatActivity {
         String[] teamNames = DataManager.getInstance(this).getAllTeamNames();
 
         // Create the adapter and set it to the AutoCompleteTextView
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, teamNames);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, teamNames);
         tvTeamPicker.setAdapter(adapter);
     }
 

@@ -3,7 +3,7 @@
     <string name="label_cyclists">Cyclists</string>
     <string name="label_teams">Teams</string>
     <string name="txtView_header_title">PRO CYCLING STATS</string>
-    <string name="btn_news_value">RACING NEWS</string>
+    <string name="btn_search_value">SEARCH</string>
     <string name="btn_exit_value">EXIT</string>
     <string name="riders_label">Members:</string>
     <string name="team_add_label">Add new team</string>
@@ -20,4 +20,12 @@
     <string name="cyclist_height_hint_label">Height:</string>
     <string name="centimeters_unit_label">cm</string>
     <string name="delete_btn_label">Delete</string>
+    <string name="cyclist_search_title">Cyclist search</string>
+    <string name="search_name_hint">Name:</string>
+    <string name="search_surname_hint">Surname:</string>
+    <string name="age_from_search_hint">Age from:</string>
+    <string name="to_search_hint">to:</string>
+    <string name="height_from_search_hint">Height from:</string>
+    <string name="weight_from_search_hint">Weight from:</string>
+    <string name="nationality_search_hint">Nationality:</string>
 </resources>
