@@ -530,7 +530,7 @@ public class DataManager {
 
         values.put("id", 4);
         values.put("name", "Primož");
-        values.put("surname", "Roglič");
+        values.put("surname", "Roglic");
         values.put("birthYear", "1989");
         values.put("teamId", 14);
         values.put("nationality", "Slovenia");

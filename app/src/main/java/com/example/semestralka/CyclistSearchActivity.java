@@ -15,6 +15,9 @@ import com.example.semestralka.model.Team;
 
 import static com.example.semestralka.MainActivity.EXTRA_MESSAGE_DATA;
 
+/**
+ * Trieda reprezentuje funkcionalitu vyhladavania cyklistov podla urcitych kriterii
+ */
 public class CyclistSearchActivity extends AppCompatActivity {
 
     AutoCompleteTextView tvTeamPicker;

@@ -22,6 +22,9 @@ import java.util.List;
 
 import static android.provider.AlarmClock.EXTRA_MESSAGE;
 
+/**
+ * Zobrazuje detailne informacie o zvolenom cyklistovi
+ */
 public class CyclistDetailActivity extends AppCompatActivity {
 
     private static final String STATE_ID_DATA = "stateIdData";

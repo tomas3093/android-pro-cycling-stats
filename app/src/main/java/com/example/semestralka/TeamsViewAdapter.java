@@ -88,6 +88,9 @@ public class TeamsViewAdapter extends RecyclerView.Adapter<TeamsViewAdapter.View
     }
 
     // parent activity will implement this method to respond to click events
+    /**
+     * Rozhranie umoznujuce vykonat akciu po kliknuti na danu polozku zoznamu
+     */
     public interface ItemClickListener {
         void onItemClick(View view, int position);
     }

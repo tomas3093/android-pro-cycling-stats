@@ -17,6 +17,9 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+/**
+ * Trieda umoznuje zobrazit formular s fieldami pre pridanie noveho cyklistu do DB
+ */
 public class CyclistFormActivity extends AppCompatActivity {
 
     AutoCompleteTextView tvTeamPicker;
