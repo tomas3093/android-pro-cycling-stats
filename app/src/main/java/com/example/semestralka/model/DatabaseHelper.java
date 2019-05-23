@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Trieda zabezpecuje pripojenie a inicializaciu databazy SQLite
+ * Trieda zabezpecuje pripojenie a inicializaciu databazy SQLite, vytvorenie tabuliek
  */
 public class DatabaseHelper extends SQLiteOpenHelper {
 

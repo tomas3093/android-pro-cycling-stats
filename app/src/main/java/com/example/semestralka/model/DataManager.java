@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Trieda zabezpecuje zakladne operacie s datami v databaze
- * je implementovana ako Singleton, teda drzi jednu instanciu dat
+ * Trieda zabezpecuje zakladne operacie s datami v databaze,
+ * je implementovana ako Singleton, teda vzdy existuje iba jedna instancia dat
  */
 public class DataManager {
 

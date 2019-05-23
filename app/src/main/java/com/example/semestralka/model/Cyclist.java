@@ -11,6 +11,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.Calendar;
 
+/**
+ * Trieda reprezentuje cyklistu ako datovy objekt
+ */
 public class Cyclist implements Parcelable {
 
     private int id;

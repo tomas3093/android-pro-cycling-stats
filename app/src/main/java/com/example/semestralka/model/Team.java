@@ -12,7 +12,7 @@ import java.io.InputStream;
 
 
 /**
- * Trieda reprezentuje cyklisticky tim
+ * Trieda reprezentuje cyklisticky tim ako datovy objekt
  */
 public class Team implements Parcelable {
 

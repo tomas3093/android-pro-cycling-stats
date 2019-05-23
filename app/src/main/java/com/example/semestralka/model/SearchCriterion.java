@@ -5,7 +5,7 @@ import android.os.Parcelable;
 
 
 /**
- * Trieda reprezentujuca vyhladavacie kriteria cyklistov
+ * Trieda reprezentujuca vyhladavacie kriteria cyklistov,
  * ak dany atribut nie je nastaveny vo vyhladavacom filtri, jeho hodnota je null
  */
 public class SearchCriterion implements Parcelable {
